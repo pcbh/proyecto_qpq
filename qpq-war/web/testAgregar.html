@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script type="text/javascript" src="qpq.jquery/jquery-1.10.2.min.js"></script>
+        <style>
+            @charset "utf-8";
+            body {
+                    background: #310f33;
+                    font-family:"Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+            }
+            .show{
+                    background:url(images/show_window.png) no-repeat left;
+                    cursor:pointer;
+                    width:16px;
+                    height:16px;
+            }
+            #cerceve{
+                    margin:150px auto 0 auto;
+                    width:400px;
+                    height:6090px;
+            }
+            .header{
+                    background:url(images/header_bg.png) no-repeat top;
+                    height:63px;
+                    border-top-left-radius: 1px;
+                    border-top-right-radius: 1px;
+                    line-height:60px;
+                    padding-left:20px;
+                    text-shadow:1px 1px rgba(53,16,56,0.5);
+                    color:#fff;
+                    font-weight:bold;
+            }
+            .formbody{
+                    width:400px;
+                    height:609px;
+                    background:url(images/formbody.png) no-repeat top;
+            }
+            form .text{
+                    width:358px;
+                    height:52px;
+                    margin:20px 0 0 22px;
+                    outline:none;
+                    font-weight:bold;
+                    padding-left:20px;
+                    border:0;
+                    color:#a9a9bc;
+            }
+            .formbody .submit{
+                    width:100px;
+                    height:40px;
+                    margin:20px 20px 0 22px;
+                    background:url(images/login.png) no-repeat;
+                    font-weight:bold;
+                    text-shadow:1px 1px rgba(53,16,56,0.5);
+                    color:#fff;
+                    cursor:pointer;
+                    border:0;
+            }
+            .formbody .a{
+                    text-decoration:none;
+                    color:#a9a9bc;
+                    font-size:14px;
+                    font-weight:bold;
+                    text-shadow:1px 1px rgba(255,255,255,0.75);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="show"></div>
+            <div id="cerceve">
+                <div class="header"><div class="text" style="float:left">Formulario de registro</div><div class="close" style="float:right;margin-right:20px;cursor:pointer;">x</div></div>
+                    <div class="formbody">
+                        <form>
+                            <input type="text" id="login" name="login" placeholder="Login" class="text" style="background:url(images/username.png) no-repeat;"/>
+                            <input type="password" id="password" name="password" placeholder="••••••••••••" class="text" style="background:url(images/password.png) no-repeat;"/>
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre" class="text" style="background:url(images/usual.png) no-repeat;" />
+                            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" class="text" style="background:url(images/usual.png) no-repeat;" />
+                            <input type="text" id="nacimiento" name="nacimiento" placeholder="Nacimiento" class="text" style="background:url(images/usual.png) no-repeat;" />
+                            <input type="text" id="mail" name="mail" placeholder="Mail" class="text" style="background:url(images/usual.png) no-repeat;" />
+                            <input type="text" id="cp" name="cp" placeholder="Código Postal" class="text" style="background:url(images/usual.png) no-repeat;" />                
+                        </form>
+                        <input type="submit" value="Registrar" class="submit" onclick="agregar()" style="background:url(images/login.png) no-repeat;" /><a href="#">Lost your password?</a>
+                  </div>
+        </div>       
+        <script type="text/javascript">
+            function agregar(){
+                $.ajax({
+                        type: "POST",
+                        url: "http://localhost:8080/qpq-war/webresources/generic/user",
+                        datatype: "json",
+                        contentType:"application/json",
+                        data: formToJSON(),
+                        success: function(resp) {
+                            alert("Usuario registrado" + resp.toString());
+                        },
+                        error: function (xhr, textStatus, errorThrown, resp) {
+                            console.log("xhr.status: " + xhr.status);
+                            console.log("xhr.statusText: " + xhr.statusText);
+                            console.log("xhr.readyState: " + xhr.readyState);
+                            console.log("xhr.responseText: " + xhr.responseText);
+                            console.log("xhr.responseXML: " + xhr.responseXML);
+                            console.log("textStatus: " + textStatus);
+                            console.log("errorThrown: " + errorThrown);
+                            console.log("xhr.redirect: " + xhr.redirect);
+                            console.log(resp.toString());
+                        }
+
+                    });
+                };
+            function formToJSON() {
+                    return JSON.stringify({
+                    "nombre": $('#nombre').val(), 
+                    "apellidos": $('#apellidos').val(),
+                    "password": $('#password').val(),
+                    "cp": $('#cp').val(),
+                    "nacimiento": $('#nacimiento').val(),
+                    "login": $('#login').val(),
+                    "mail": $('#mail').val()
+                    });
+                };
+        </script>
+    </body>
+</html>

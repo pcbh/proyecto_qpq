@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Publicar Oferta/Demanda</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/Principal.css">
+        <link rel="stylesheet" type="text/css" href="css/Cabecera.css">
+        <link rel="stylesheet" type="text/css" href="css/Footer.css">
+        <link rel="stylesheet" type="text/css" href="css/CreationGrid.css">
+        <link rel="stylesheet" type="text/css" href="css/jqueryUI.css">
+        <script type="text/javascript" src="qpq.jquery/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="http://www.gmarwaha.com/jquery/jcarousellite/js/jcarousellite_1.0.1.min.js"></script>
+        <script type="text/javascript" src="qpq.jquery/jquery.cookie.js"></script>
+        <script type="text/javascript" src="qpq.jquery/Jqueryvalidation.js"></script>
+        <script type="text/javascript" src="qpq.jquery/jquery.publicacion.js"></script>
+    </head>
+    <body onload="Cookies()">
+        <div id="wrapper">
+            <div id="header">
+            <div class="headerwrapper">
+                <div class="logo">
+                    <div class="logo-inner">
+                        <a href="#">
+                            <img src="images/logotipo.png" alt="QPQ.es" title="QPQ.es" width="232" height="70">
+                        </a>
+                    </div>                        
+                </div>
+                <div class="navwrapper">
+                    <div class="perfil">
+                        <ul>
+                            <li>
+                                <span id="spanNombre">Bienvenido: </span>
+                            </li>
+                            <li>
+                                <a href="perfil.html" id="btnPerfil" class="boton_estilo">Perfil</a>  
+                            </li>
+                            <li>
+                                <a href="index.html" id="btnIndex" class="boton_estilo">Salir</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="Nav">
+                        <ul>
+                            <li><a href="/Ofertas">Ofertas</a></li>
+                            <li class="separador"> | </li>
+                            <li><a href="/Demandas">Demandas</a></li>
+                            <li class="separador"> | </li>
+                            <li><a href="/Funciona">Como Funciona</a></li>
+                            <li class="separador"> | </li>
+                            <li><a href="/Contacto">Contacto</a></li>
+                            <li class="separador"> | </li>
+                            <li><a href="/Invita">¡Invita a tus amigos!</a></li>
+                            <li class="separador"> | </li>
+                            <li><a href="/Index">Salir</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lightboxback"></div>
+        <div class="newtaskback"></div>
+        <div id="Contenido">
+            <h1 class="Publicacion_tarea">
+                <span class="span0">
+                    <a href="#">
+                        <img src="images/home.png" alt="perfil" title="Perfil" width="32" height="31">
+                    </a>
+                </span>
+                <span class="span1 shorten width-200 no-tooltip">
+                    Nueva Publicación
+                </span>
+            </h1>
+            <div class="left">
+                <div class="b2">
+                    <form id="PublicacionAnyadir" action="#" method="post">                        
+                        <div class="apart zone">
+                            <div class="formline">
+                                <label>Comunidad: </label>
+                                <div class="input select">
+                                    <select name="parent_selection" id="parent_selection" class="focus required">
+                                        <option value>Selecciona una ciudad</option>
+                                        <option value="Andalucia">Andalucía</option>
+                                        <option value="Aragon">Aragón</option>
+                                        <option value="Asturias">Asturias</option>
+                                        <option value="Islas_Baleares">Islas Baleares</option>
+                                        <option value="Islas_Canarias">Islas Canarias</option>
+                                        <option value="Cantabria">Cantabria</option>
+                                        <option value="Castilla_la_mancha">Castilla la Mancha</option>
+                                        <option value="Castilla_leon">Castilla y León</option>
+                                        <option value="Catalunya">Cataluña</option>
+                                        <option value="Comunidad_valenciana">Comunidad Valenciana</option>
+                                        <option value="Extremadura">Extremadura</option>
+                                        <option value="Galicia">Galicia</option>
+                                        <option value="La_rioja">La Rioja</option>
+                                        <option value="Madrid">Madrid</option>
+                                        <option value="Murcia">Murcia</option>
+                                        <option value="Navarra">Navarra</option>
+                                        <option value="Pais_vasco">Pais Vasco</option>
+                                        <option value="Ceuta">Ceuta</option>
+                                        <option value="Melilla">Melilla</option>
+                                    </select>                                
+                                </div>
+                            </div>
+                            <div class="formline second">
+                                <label>Provincia: </label>
+                                <div id="listaDeProvincias">
+                                    <select name="child_selection" id="child_selection" class="required"></select>
+                                </div>
+                            </div>
+                        </div>             
+                        <div class="apart">
+                            <div id="SeparadorDeContenedores">
+                                <div class="contenedorDeTareas">
+                                    <input type="hidden" name="dataTareaId" value="1" id="escondidaTarea" class="focus required"/>
+                                    <a href="#" id="previo" class="prev" onclick="return false;">
+                                        <img src="https://cdn1.iconfinder.com/data/icons/fs-icons-ubuntu-by-franksouza-/512/arrow-left.png" 
+                                             alt="más categorias" title="más categorías" width="22" height="96">
+                                    </a>
+                                    <div class="slidewrapper">
+                                        <ul id="ul1" style="width: 1170px;">
+                                            <li>
+                                                <a href="#" id="Categoria1" onclick="return false;">
+                                                    <img src="http://mudanzas-internacionales.biz/wp-content/uploads/2012/09/embalaje-de-mudanzas.png"
+                                                         alt="Portes y Mudanzas" title="Portes y Mudanzas" width="168" height="95">
+                                                    <span class="info_adicional bold selected" style="display: inline;">Portes y Mudanzas</span>
+                                                </a>                                                            
+                                            </li>
+                                            <li>
+                                                <a href="#" id="Categoria2" onclick="return false;">
+                                                    <img src="data:image/jpeg;base64,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"
+                                                         alt="Montaje de Muebles" title="Montaje de Muebles" width="168" height="95">
+                                                    <span class="info_adicional bold selected" style="display: inline;">Montaje de Muebles</span>
+                                                </a>                                                            
+                                            </li>
+                                            <li>
+                                                <a href="#" id="Categoria3" onclick="return false;">
+                                                    <img src="http://pixabay.com/static/uploads/photo/2012/04/25/00/04/icon-41267_640.png"
+                                                         alt="Arreglos del hogar" title="Arreglos del hogar" width="168" height="95">
+                                                    <span class="info_adicional bold selected" style="display: inline;">
+                                                        Arreglos del hogar
+                                                    </span>
+                                                </a>                                                            
+                                            </li>
+                                            <li>
+                                                <a href="#" id="Categoria4" onclick="return false;">
+                                                    <img src="http://static.freepik.com/foto-gratis/la-fregona-y-el-cubo_17-1229110218.jpg"
+                                                         alt="Tareas del hogar" title="Tareas del hogar" width="168" height="95">
+                                                    <span class="info_adicional bold selected" style="display: inline;">
+                                                        Tareas del hogar
+                                                    </span>
+                                                </a>                                                            
+                                            </li>
+                                            <li>
+                                                <a href="#" id="Categoria5" onclick="return false;">
+                                                    <img src="http://icons.iconarchive.com/icons/fixicon/farm/256/dog-icon.png"
+                                                         alt="Cuidados a mascotas" title="Cuaidados a mascotas" width="168" height="95">
+                                                    <span class="info_adicional bold selected" style="display: inline;">
+                                                        Cuaidados a mascotas
+                                                    </span>
+                                                </a>                                                            
+                                            </li>
+                                            <li>
+                                                <a href="#" id="Categoria6" onclick="return false;">
+                                                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxQSEhUUExMUEhUVEBQUFBgVFRQWFRUUFBQWFhUUFBcYHCggGBolHBQUITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0OGxAQGywkHyUuLDItLC8wNCwsLCwsNywsLCwuLCwsLCwsNSwsLCwsLC8sLCwsLSwsLCwsLCwsLDQvLP/AABEIAOEA4QMBEQACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAgMBBAUGB//EAEsQAAEDAQIHCgoIBgEEAwAAAAEAAgMRBBIFITFBUXGRBhMyYYGSobHB0QcUIkJSU4KTorIVVGNyg8LS8BYjJGJz4UMXlKPiMzRk/8QAGgEBAAIDAQAAAAAAAAAAAAAAAAQFAQIDBv/EADIRAQACAQICBgoCAwEBAAAAAAABAgMEERIhBTFBUWFxExQVIiMyUoGhsZHRQuHwwTP/2gAMAwEAAhEDEQA/APuKAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIK552saXOcGgZSTQIzETM7QxZ7Q2QXmODhpGnRxFInctWaztK1GBAQEBBiqCLpQMpAQQ8YGap1AnqQRM59E8pA7UGN9d/aOU9yDG+O0jYT2oMb4fSHNP6kGN+PpDmn9SB4ydLTtHegk20nQDqI7aILWzjPi14kGXTAZ8ejPsQVOtOgbSB/voQY3539o2nsCDN93pDmn9SBed6Q5p/UgBzvSHNPegzfd/aeUjsQZErvR2EdqDO/6Q4chQSbO05CNqCM9oDRWqDxVulktMlXYmMOJoNQK1o+vnVGfWNKjZJmZ2WunjHSm8c5lYcMCzEEHJicDkcNB0HQc3GMS1rk4W06acz1mDcIMnYHxuqM+lp0EZipUWiY3hWZMdsduG0NtZcxByd005ZAbri0l7RUEg5amhGMYgVI01YtkiJcc9prjmYeawU580u9maZouOcSJZK0FNLuNS9RFMdd4rH8IuC1722m0u7FAxhxOmef75pHDm1p0KvtebdkfwnRXZuxu0AD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"
+                                                         alt="Ayuda a estudios" title="Ayuda a estdios" width="168" height="95">
+                                                    <span class="info_adicional bold selected" style="display: inline;">
+                                                        Ayuda a estudios
+                                                    </span>
+                                                </a>                                                            
+                                            </li>
+                                            <li>
+                                                <a href="#" id="Categoria7" onclick="return false;">
+                                                    <img src="data:image/jpeg;base64,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"
+                                                         alt="Otros" title="Otros" width="168" height="95">
+                                                    <span class="info_adicional bold selected" style="display: inline;">
+                                                        Otros
+                                                    </span>
+                                                </a>                                                            
+                                            </li>
+                                        </ul>                                            
+                                    </div>
+                                    <a href="#" id="siguiente" class="next" onclick="return false;">
+                                        <img src="https://cdn1.iconfinder.com/data/icons/fs-icons-ubuntu-by-franksouza-/512/arrow-right.png"
+                                             alt="más categorías" title="más categorías" width="22" height="96">
+                                    </a>
+                                </div>
+                                    <input type="hidden" name="data" value class="focus">
+                                    <div id="subCategorias">
+                                        <div class="subCat" id="subCategoria1" style>
+                                            <div class="oben">
+                                                <p class="bold">Portes y mudanzas</p>
+                                            </div>
+                                            <div class="col">
+                                                <div class="formline">
+                                                    <input type="radio" value="11" name="dataTask" class="focus required">
+                                                    <label>Muebles o Paquetes</label>
+                                                </div>
+                                                <div class="formline">
+                                                    <input type="radio" value="12" name="dataTask" class="focus required">
+                                                    <label>Mudanzas completas</label>
+                                                </div>
+                                                <div class="formline">
+                                                    <input type="radio" value="13" name="dataTask" class="focus required">
+                                                    <label>Ejemplo3</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="subCat" id="subCategoria2" style>
+                                            <div class="oben">
+                                                <p class="bold">Montaje de Muebles</p>
+                                            </div>
+                                            <div class="col">                                               
+                                                <div class="formline">
+                                                    <input type="radio" value="21" name="dataTask" class="focus required">
+                                                    <label>Ejemplo1</label>
+                                                </div>
+                                                <div class="formline">
+                                                    <input type="radio" value="22" name="dataTask" class="focus required">
+                                                    <label>Ejemplo2</label>
+                                                </div>
+                                                <div class="formline">
+                                                    <input type="radio" value="23" name="dataTask" class="focus required">
+                                                    <label>Ejemplo3</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="apart desc">
+                                <div class="formline">
+                                    <label>Título: 
+                                    <span class="red bold">*</span>
+                                    </label>
+                                    <div class="input text">
+                                        <input name="Task_Title" maxlength="100" type="text" id="TaskTITLE"
+                                               class="required">
+                                    </div>
+                                </div>
+                                <div class="formline">
+                                    <label>
+                                        Descripción: 
+                                    <span class="red bold">*</span>
+                                    <br>
+                                    <span class="char-left">
+                                        (quedan 
+                                        <span id="TaskDESCRIPCIONcharsLeft">500</span>
+                                        caracteres)
+                                    </span>
+                                    </label>
+                                    <br>                                    
+                                    <textarea name="dataTask_DESCRIPCION" rows="4" cols="30" id="TaskDESCRIPCION" class="required"></textarea>                                    
+                              
+                                </div>    
+                            
+                            </div>
+                        <div class="apart adress">
+                            <div id="changeLocationDiv" style>
+                                <div class="formline" id="TaskLocationWithLocationDivGroup">
+                                    <input type="radio" name="dataTask_LOCATION_TYPE" 
+                                           id="TaskLOCATIONTYPEWITHLOCATION" value="WITH_LOCATION" checked="checked"
+                                           class="focus required">
+                                    <label>Tiene una ubicación exacta</label>
+                                    <div id="TaskLocationWithLocationDivGroupContent">
+                                        <div class="map" style="display: block;" id="TaskLocationWithLocationDiv">
+                                            <div class="wrapper">
+                                                <label>Dirección:</label>
+                                                <input name="dataTask_LOCATION_SEARCH" id="gmap_location_search_input"
+                                                       autocomplete="off" type="text" class="required">
+                                                <ul id="searchwell"></ul>
+                                            </div>
+                                            <div class="addedum">
+                                                <label>Datos complementarios:</label>
+                                                <input name="data[Task][LOCATION_COMPLEMENTARY_DATA]" id="TaskLOCATIONCOMPLEMENTARYDATA"
+                                                       type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formline" id="TaskLocationWithoutLocationDiv">
+                                    <input type="radio" name="dataTask_LOCATION_TYPE" 
+                                           id="TaskLOCATIONTYPEWITHOUTLOCATION" value="WITHOUT_LOCATION"
+                                           class="focus required">
+                                    <label>No quiero publicar la ubicación exacta</label>
+                                </div>
+                            </div>                        
+                        </div>
+                        <div class="apart _when">
+                            <div id="selectedImplementationDeadLineDiv">
+                                La tarea se realizará...
+                                <span class="float-right">
+                                    <button type="button" class="button4" id="editImplementationDeadLineLink" onclick="return false;">
+                                        <span>Modificar</span>
+                                    </button>
+                                </span>
+                            </div>
+                            <div id="changeImplementationDeadLineDiv" style="display: none;" class="change">
+                                <div class="formline" id="ImplementationDeadLineByTimeDivGroup">
+                                    <input type="radio" name="data[Task][IMPLEMENTATION_DEAD_LINE_TYPE]" 
+                                           id="TaskIMPLEMENTATIONDEADLINETYPEATDATE" value="AT_DATE" checked="checked" class="focus">
+                                    <label for="TaskIMPLEMENTATIONDEADLINETYPEATDATE">Un día en concreto</label>
+                                    <div id="ImplementationDeadLineAnyTimeDivGroupContent">
+                                        <div id="ImplementationDeadLineByTimeDiv">
+                                            <span class="date">
+                                                <input name="data[Task][IMPLEMENTATION_DEAD_LINE]" class="hid focus hasDatepicker" 
+                                                       type="text" value="19/01/2014 18:56:09" id="TaskIMPLEMENTATIONDEADLINE">
+                                            </span>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <div class="formline" id="ImplementationDeadLineAnyTimeDivGroup">
+                                    <input type="radio" name="data[Task][IMPLEMENTATION_DEAD_LINE_TYPE]" id="TaskIMPLEMENTATIONDEADLINETYPEANYMOMENT" 
+                                           value="ANY_MOMENT" class="focus">
+                                    <label for="TaskIMPLEMENTATIONDEADLINETYPEANYMOMENT">Sin fecha concreta</label>
+                                </div>
+                            </div>                                                                                          
+                        </div>
+                        <div class="apart prices">
+                            <div class="sideswrapper">
+                                <div class="link">
+                                    <div class="formline">
+                                        <label>
+                                            Precio:
+                                            <span class="red bold">*</span>
+                                        </label>
+                                        <input name="data[Task][AMOUNT]" type="text" id="TaskAMOUNT" class="focus">
+                                        <span class="help">                                            
+                                            <a onclick="return false;" href="#">
+                                                <img src="http://images.etece.es/img/help.gif" alt="Ayuda" title="Ayuda" width="20" height="20">
+                                            </a>
+                                            <span class="hidden-info" style="display: none;">
+                                                <span class="top">
+                                                    <span class="bold">X</span>
+                                                </span>
+                                                <span class="mitte">
+                                                    <span class="title">Ayuda</span>
+                                                    <span>"Si quiere publicar una oferta/demanda gratuita ponga 0 en el recuadro. Si 
+                                                        quiere someter su publicación a subasta escriba un precio a partir del cual
+                                                        comenzará la subasta."</span>
+                                                </span>
+                                                <span class="bottom"></span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="apart visibility">                            
+                            <div class="formline" id="OpenVisibility">
+                                <input type="radio" name="OpenClosed" id="TaskAbierta" value="Open" class="focus" checked="checked">
+                                <label>Quiero que se vea toda la información</label>
+                            </div>
+                            <div class="formline" id="ClosedVisibility">
+                                <input type="radio" name="OpenClosed" id="TaskCerrada" value="Closed" class="focus">
+                                <label>Quiero que sólo se vean el título, la descripción y la provincia</label>
+                            </div>
+                        </div>
+                        
+                        <input type="submit" value="Validar" class="boton_estilo" />
+                    </form>
+                    <a href="" id="btnPublicar" class="boton_estilo">Publicar</a>
+                    <div id="usuario"></div>
+                </div>
+            </div>
+        </div>
+            <script type="text/javascript">
+                function Cookies() {
+                    var cookieValue = $.cookie("cookie_username");
+                    
+                    $('#spanNombre').html('<h1> Bienvenido ' + cookieValue + '</h1>');
+
+                    $('#btnPublicar').click(function(){
+                        Guardar();
+                });
+                
+                $("#PublicacionAnyadir").validate({                       
+                           rules: {
+                                   parent_selection : {
+                                       required: true
+                                   },  
+                                   child_selection: {
+                                       required: true
+                                   },
+                                   dataTareaId: {
+                                       required: true
+                                   },
+                                   dataTask: {
+                                       required: true
+                                   },
+                                   Task_Title : {
+                                       required: true,
+                                       maxlength: 45
+                                   },
+                                   dataTask_DESCRIPCION: {
+                                       required: true,
+                                       maxlength: 500
+                                   },
+                                   dataTask_LOCATION_TYPE: {
+                                       required: true
+                                   },
+                                   dataTask_LOCATION_SEARCH: {
+                                       required: true
+                                   }
+                               },
+                            messages: {
+                                   parent_selection : {
+                                       required: "Seleccione una CCAA"
+                                   }, 
+                                   child_selection: {
+                                       required: "Seleccione una provincia"
+                                   },
+                                   dataTareaId: {
+                                       required: "Debe de seleccionar una tarea"
+                                   },
+                                   dataTask: {
+                                       required: "Debe de seleccionar una opción"
+                                   },
+                                   Task_Title : {
+                                       required: "Debe de introducir un título",
+                                       maxlength: "Debe de tener un máximo de 45 caracteres"
+                                   },
+                                   dataTask_DESCRIPCION: {
+                                       required: "Debe de introducir una desripción",
+                                       maxlength: "Debe de tener un máximo de 500 caracteres"
+                                   },
+                                   dataTask_LOCATION_TYPE: {
+                                       required: "Seleccione una opción"
+                                   },
+                                   dataTask_LOCATION_SEARCH: {
+                                       required: "Introduzca un valor"
+                                   }
+                               },
+                               submitHandler: function(){
+                                   Guardar();
+                               }
+
+                       });
+                     
+                function Guardar(){
+                    
+                    var cookieValueType = $.cookie('cookie_publicacion');
+                  /*  alert($("#parent_selection").val() + ", " + 
+                            $("#child_selection").val() + ", " +
+                            $("#escondidaTarea").val() + ", " +
+                            $("input[name='dataTask']:checked").val() + ", " +
+                            $("#TaskTITLE").val() + ", " +
+                            $("#TaskDESCRIPCION").val() + ", " +
+                            $("input[name='dataTask_LOCATION_TYPE']:checked").val() + ", " +
+                            $("input[name='data[Task][IMPLEMENTATION_DEAD_LINE_TYPE]']:checked").val() + ", " +
+                            $("#TaskAMOUNT").val() + ", " +
+                            $("input[name='OpenClosed']:checked").val() + ", " +
+                            cookieValueType
+                            );
+                            */
+                    if(cookieValueType==="oferta")
+                        agregarOferta();  
+                    else
+                        agregarDemanda();
+                
+                };
+                
+                function agregarOferta(){
+                    alert("AGREGA");
+                    agregarUsuario();   
+                    $.ajax({
+                        type: "POST",
+                        url: "http://localhost:8080/qpq-war/webresources/generic/oferta",
+                        datatype: "json",
+                        contentType:"application/json",
+                        data: formToJSON(),
+                        success: function() {
+                            alert("Oferta Registrada");
+                            window.location="perfil.html";
+                        },
+                        error: function (xhr, textStatus, errorThrown, resp) {
+                            console.log("xhr.status: " + xhr.status);
+                            console.log("xhr.statusText: " + xhr.statusText);
+                            console.log("xhr.readyState: " + xhr.readyState);
+                            console.log("xhr.responseText: " + xhr.responseText);
+                            console.log("xhr.responseXML: " + xhr.responseXML);
+                            console.log("textStatus: " + textStatus);
+                            console.log("errorThrown: " + errorThrown);
+                            console.log("xhr.redirect: " + xhr.redirect);
+                            console.log(resp.toString());
+                        }
+
+                    });
+                };
+                
+                function agregarDemanda(){
+                    alert("AGREGA");
+                    agregarUsuario();   
+                    $.ajax({
+                        type: "POST",
+                        url: "http://localhost:8080/qpq-war/webresources/generic/demanda",
+                        datatype: "json",
+                        contentType:"application/json",
+                        data: formToJSON(),
+                        success: function() {
+                            alert("Demanda Registrada");
+                            window.location="perfil.html";
+                        },
+                        error: function (xhr, textStatus, errorThrown, resp) {
+                            console.log("xhr.status: " + xhr.status);
+                            console.log("xhr.statusText: " + xhr.statusText);
+                            console.log("xhr.readyState: " + xhr.readyState);
+                            console.log("xhr.responseText: " + xhr.responseText);
+                            console.log("xhr.responseXML: " + xhr.responseXML);
+                            console.log("textStatus: " + textStatus);
+                            console.log("errorThrown: " + errorThrown);
+                            console.log("xhr.redirect: " + xhr.redirect);
+                            console.log(resp.toString());
+                        }
+
+                    });
+                };
+                //REVISAAAR
+               function agregarUsuario(){
+                    $.ajax({
+                        type: "GET",
+                        url: "http://localhost:8080/qpq-war/webresources/generic/getUsuario/" + $.cookie("cookie_username"),
+                        datatype: "json",
+                        success: function(resp) { 
+                            currentUser=resp;
+                            detallesUsuario(currentUser);
+                            
+                        },
+                        error: function (resp) {
+                            console.log("resp.status: " + resp.status);
+                            console.log("resp.statusText: " + resp.statusText);
+                            console.log("resp.response: " + resp.responseText);
+                            console.log(resp.toString());
+                        }
+
+                    });
+                    
+                };
+                
+                function detallesUsuario(currentUser) {
+                  $.ajax({
+                        type: "PUT",
+                        url: "http://localhost:8080/qpq-war/webresources/generic/idRegistro/" + currentUser.idUsuario,
+                        datatype: "json",
+                        success: function() { 
+                            alert("registrado");
+                            
+                        },
+                        error: function (resp) {
+                            console.log("resp.status: " + resp.status);
+                            console.log("resp.statusText: " + resp.statusText);
+                            console.log("resp.response: " + resp.responseText);
+                            console.log(resp.toString());
+                        }
+
+                    });  
+                };
+               
+                function formToJSON(){
+                    vis=0;
+                    loc="";
+                    time="0";
+                    if($("input[name='OpenClosed']:checked").val()==="Open")
+                        vis=1;
+                    if($("input[name='dataTask_LOCATION_TYPE']:checked").val()==="WITH_LOCATION")
+                        loc="Direccion: " + $("#gmap_location_search_input").val() + "; Complementario: " + 
+                            $("#TaskLOCATIONCOMPLEMENTARYDATA").val();
+                    if($("input[name='data[Task][IMPLEMENTATION_DEAD_LINE_TYPE]']:checked").val()==="AT_DATE")
+                        time=$("#TaskIMPLEMENTATIONDEADLINE").val();
+                    
+                    return JSON.stringify({
+                        "titulo": $("#TaskTITLE").val(),
+                        "detalles": $("#TaskDESCRIPCION").val(),
+                        "tipo": $("#TaskAMOUNT").val(),
+                        "cerrada": 0,
+                        "visibilidad": vis,
+                        "comunidad": $("#parent_selection").val(),
+                        "provincia": $("#child_selection").val(),
+                        "categoria": $("#escondidaTarea").val(),
+                        "subcategoria": $("input[name='dataTask']:checked").val(),
+                        "localizacion": loc,
+                        "realizacion": time
+                    });
+                    
+                };
+                
+                          
+                
+            }
+            </script>
+        </div>
+    </body>
+</html>

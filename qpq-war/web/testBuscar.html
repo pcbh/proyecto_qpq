@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script type="text/javascript" src="qpq.jquery/jquery-1.10.2.min.js"></script>
+    </head>
+    <body>
+        <input type="text" id="id" name="id" value="Id" />
+        <button id="buscar" onclick="buscar()">Buscar</button>
+        <script type="text/javascript">
+            function buscar(){
+                $.ajax({
+                   type: "GET",
+                   url: "http://localhost:8080/qpq-war/webresources/generic/user/" + $("#id").val(),
+                   datatype: "json",
+                   data: "",
+                   success: function(resp){
+                       alert("Lo encuentra: " + JSON.stringify(resp).toString());
+                   },
+                   error: function() {
+                       alert("ERROR");
+                   }
+                });
+            }
+        </script>
+    </body>
+</html>

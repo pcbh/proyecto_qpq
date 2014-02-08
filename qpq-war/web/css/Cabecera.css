@@ -1,0 +1,124 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13-ene-2014, 15:24:31
+    Author     : laura
+*/
+
+#header {
+    width: 100%;
+    float: left;
+    height: 93px;
+    background-color: #58ACFA;
+}
+
+.headerwrapper {
+    width: 997px;
+    height: 90px;
+    margin: auto;
+}
+
+.headerwrapper .logo {
+    float: left;
+    margin-bottom: 6px;
+}
+
+.headerwrapper .logo-inner, .headerwrapper h1 {
+    //margin: 20px 0 0 20px;
+    float: left;
+    width: 232px;
+//    text-indent: -10000px;
+}
+
+.headerwrapper .navwrapper {
+    float: right;
+    width: 700px;
+    margin-top: -8px;
+}
+
+.headerwrapper .perfil {
+    float: right;
+    width: auto;
+    margin: 12px 20px 18px 0;
+}
+
+.headerwrapper .perfil .flatbtn{
+    display: inline;
+    color: #FFF;
+    padding: 3px 7px 0;
+    font-size: 14px;
+    float: left;
+}
+
+.headerwrapper .perfil ul {
+    list-style: none;
+}
+
+.headerwrapper .perfil ul li {
+    display: inline;
+    color: #FFF;
+    padding: 3px 7px;
+    font-size: 24px;
+    float: left;
+}
+
+.headerwrapper .Nav {
+    float: right;
+    margin-right: 20px;
+    min-width: 629px;
+}
+
+.headerwrapper .Nav ul {
+    list-style: none;
+    width: auto;
+    float: right;
+}
+
+.headerwrapper .Nav ul li {
+    display: inline;
+    color: #FFF;
+    padding: 3px 7px 0;
+    font-size: 14px;
+    float: left;
+}
+
+.headerwrapper li.separador {
+    padding: 2px !important;
+}
+
+.newtaskback {
+    top: 93px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    //background: url(../img/back-addinfo.png) repeat;
+    z-index: 5;
+    left: 0;
+    cursor: pointer;
+    display: none;
+}
+
+.Publicacion_tarea {
+    float: left;
+    margin-top: -35px;
+    position: absolute;
+    width: 955px;
+    font-size: 14px;
+    padding-top: 4px;
+}
+
+.Publicacion_tarea span {
+    padding-right: 5px;
+    float: left;
+    //white-space: nowrap;
+}
+
+.Publicacion_tarea a {
+    color: #2f2f2f;
+    text-decoration: none;
+    text-decoration: underline;
+}
+

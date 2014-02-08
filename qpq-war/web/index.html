@@ -1,0 +1,363 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QPQ.es</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="qpq.jquery/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="qpq.jquery/jquery.cookie.js"></script>
+        <script type="text/javascript" charset="utf-8" src="qpq.jquery/jquery.leanModal.min.js"></script>     
+        <link rel="stylesheet" type="text/css" href="css/Principal.css">
+        <link rel="stylesheet" type="text/css" href="css/Cabecera.css">        
+    </head>
+    <body onload="mostrarOfertas(); mostrarDemandas()">
+        <div id="wrapper">
+            <div id="header">
+                <div class="headerwrapper">
+                    <div class="logo">
+                        <div class="logo-inner">
+                            <a href="#">
+                                <img src="images/logotipo.png" alt="QPQ.es" title="QPQ.es" width="232" height="70">
+                            </a>
+                        </div>                        
+                    </div>
+                    <div class="navwrapper">
+                        <div class="perfil">
+                            <ul>
+                                <li>
+                                    <a href="#loginmodal" class="flatbtn" id="modaltrigger">Acceder</a>
+                                </li>
+                                <li>
+                                    <a href="registro.html" id="btnRegistro" class="boton_estilo">Registrar</a>
+                               <!--     <button id="registro" class="style_button" onclick="Registrar()">Registrar</button>   
+                                -->
+                                
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="Nav">
+                            <ul>
+                                <li><a href="/Ofertas">Ofertas</a></li>
+                                <li class="separador"> | </li>
+                                <li><a href="/Demandas">Demandas</a></li>
+                                <li class="separador"> | </li>
+                                <li><a href="/Funciona">Como Funciona</a></li>
+                                <li class="separador"> | </li>
+                                <li><a href="/Contacto">Contacto</a></li>
+                                <li class="separador"> | </li>
+                                <li><a href="/Invita">¡Invita a tus amigos!</a></li>
+                                <li class="separador"> | </li>
+                                <li><a href="/Index">Salir</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="Contenido">
+                <table class="eventBody" width="100%">
+                    <tr>
+                        <td width="50%" align="left">
+                            <h3 id="listaOfertas" class="eventTitle">
+                            </h3>
+                            <div id="listaOfertasDetalles" class="eventContent">                        
+                            </div>
+                        </td>
+                        
+                        <td width="50%" align="right">
+                            <h3 id="listaDemandas" class="eventTitle">
+                            </h3>
+                            <div id="listaDemandasDetalles" class="eventContent">                        
+                            </div>
+                        </td>
+                    <tr>
+                </table>
+                
+                <!--
+                <table id="tablaInicio">
+                    <tr id="Fila0">
+                        <td colspan="3">
+
+                       <!--     <button id="registro" onclick="Registrar()">Registrar</button>       -->   
+                       <!--
+                        </td>
+                    </tr>
+                    <tr id="Fila1">
+                        <td>Una oferta</td>
+                        <td rowspan="6">
+                      <!--      <center><a href="#loginmodal" class="flatbtn" id="modaltrigger">Entrar</a></center> 
+                      -->
+                      <!--
+                        </td>
+                        <td>Una demanda</td>
+                    </tr>
+                    <tr id="Fila2">
+                        <td>Una oferta</td>
+                        <td>Una demanda</td>
+                    </tr>
+                    <tr id="Fila3">
+                        <td>Una oferta</td>
+                        <td>Una demanda</td>
+                    </tr>
+                    <tr id="Fila4">
+                        <td>Una oferta</td>
+                        <td>Una demanda</td>
+                    </tr>
+                    <tr id="Fila5">
+                        <td>Una oferta</td>
+                        <td>Una demanda</td>
+                    </tr>
+                    <tr id="Fila6">
+                        <td>Una oferta</td>
+                        <td>Una demanda</td>
+                    </tr>
+                </table>
+-->
+                <div id="loginmodal" style="display:none;">
+                    <form>
+                        <h1>User Login</h1>
+                          <label>Username:</label>
+                          <input type="text" name="username" id="usernamel" class="txtfield" tabindex="1">
+
+                          <label>Password:</label>
+                          <input type="password" name="password" id="passwordl" class="txtfield" tabindex="2">
+                    </form>
+                      <div class="center">
+                          <input type="submit" name="loginbtn" id="loginbtn" class="flatbtn-blu hidemodal" value="Log In" tabindex="3">
+                          <input type="submit" name="visitante" id="visitante" class="flatbtn-blu hidemodal" value="Visitante" tabindex="3">
+                          <button type="submit" class="link" id="passwordButton"><span>Olvidé mi contraseña</span></button>
+                      </div>
+                  </div>
+                <script type="text/javascript">            
+                    $(function(){
+                        //Borrar info cookies         
+                        
+                        $('#loginform').submit(function(e){
+                          return false;
+                        });
+                        $('#registreform').submit(function(e){
+                          return false;
+                        });
+
+                        $('#modaltrigger').leanModal({ top: 110, overlay: 0.45, closeButton: ".hidemodal" });
+                        $('#modaltrigger_reg').leanModal({ top: 110, overlay: 0.45, closeButton: ".hidemodal" });
+                      });
+                      
+                    function eraseCookies(){
+                        document.cookie = "c_publicacion="+expires+"; path=/";
+                        document.cookie = "c_oferta="+expires+"; path=/";
+                     }
+
+                      $('#loginbtn').click(function(){
+                          alert("PILLADO");
+                          
+                          $.cookie('cookie_username', $('#usernamel').val(),{path: '/'});
+                          getId();
+                        $.ajax({                   
+                           type: "GET",
+                           url: "http://localhost:8080/qpq-war/webresources/generic/user/" + $('#usernamel').val() +
+                                   "/" + $('#passwordl').val(),
+                           datatype: "json",
+                           data: "",
+                           success: function(resp){
+                               if(resp===0) {
+                                   window.location="perfil.html";
+                               } else if (resp===1) {
+                                   alert("Contraseña incorrecta");
+                               } else {
+                                   alert("No está dentro del sistema");
+                               }
+                           },
+                           error: function (error, xhr, textStatus, errorThrown) { 
+                                    console.log(JSON.stringify(error));
+                                    console.log("xhr.status: " + xhr.status);
+                                    console.log("xhr.statusText: " + xhr.statusText);
+                                    console.log("xhr.readyState: " + xhr.readyState);
+                                    console.log("xhr.responseText: " + xhr.responseText);
+                                    console.log("xhr.responseXML: " + xhr.responseXML);
+                                    console.log("textStatus: " + textStatus);
+                                    console.log("errorThrown: " + errorThrown);
+                                    console.log("xhr.redirect: " + xhr.redirect);
+                                }
+                          });
+
+
+                    });
+                    
+                    function getId(){
+                        $.ajax({                   
+                           type: "GET",
+                           url: "http://localhost:8080/qpq-war/webresources/generic/id/" + $('#usernamel').val(),
+                           datatype: "json",
+                           data: "",
+                           success: function(n){
+                               $.cookie("cookie_idUsuario",n,{path: "/"});
+                           },
+                           error: function (error, xhr, textStatus, errorThrown) { 
+                               console.log("ERROR");
+                                    console.log(JSON.stringify(error));
+                                    console.log("xhr.status: " + xhr.status);
+                                    console.log("xhr.statusText: " + xhr.statusText);
+                                    console.log("xhr.readyState: " + xhr.readyState);
+                                    console.log("xhr.responseText: " + xhr.responseText);
+                                    console.log("xhr.responseXML: " + xhr.responseXML);
+                                    console.log("textStatus: " + textStatus);
+                                    console.log("errorThrown: " + errorThrown);
+                                    console.log("xhr.redirect: " + xhr.redirect);
+                                }
+                          });
+                        };
+                        
+                        function formToJSON() {
+                            return JSON.stringify({
+                            "nombre": $('#nombre').val(), 
+                            "apellidos": $('#apellidos').val(),
+                            "password": $('#password').val(),
+                            "cp": $('#cp').val(),
+                            "nacimiento": $('#nacimiento').val(),
+                            "login": $('#login').val(),
+                            "mail": $('#mail').val()
+                            });
+                        };        
+
+                    $('#visitante').click(function(){
+                        window.location="perfil.html";
+                    });
+                    
+                    $('#passwordButton').click(function(){
+                        sendMail();
+                    });
+                    
+                    $('#prueba').click(function(){
+                        alert("LLEGA");
+                        mostrarOfertas();
+                    });
+                    
+                    function sendMail(){
+                        alert($('#usernamel').val());
+                        $.ajax({                   
+                           type: "GET",
+                           url: "http://localhost:8080/qpq-war/webresources/generic/password/" + $('#usernamel').val(),
+                           datatype: "json",
+                           data: "",
+                           success: function(){
+                               alert("Se ha enviado un correo a la cuenta de correo asociada");
+                           },
+                           error: function (error, xhr, textStatus, errorThrown) { 
+                               console.log("ERROR");
+                                    console.log(JSON.stringify(error));
+                                    console.log("xhr.status: " + xhr.status);
+                                    console.log("xhr.statusText: " + xhr.statusText);
+                                    console.log("xhr.readyState: " + xhr.readyState);
+                                    console.log("xhr.responseText: " + xhr.responseText);
+                                    console.log("xhr.responseXML: " + xhr.responseXML);
+                                    console.log("textStatus: " + textStatus);
+                                    console.log("errorThrown: " + errorThrown);
+                                    console.log("xhr.redirect: " + xhr.redirect);
+                                }
+                          });            
+                    }
+                    
+                    function ProcesarOfertas(ofertas){
+                        var list = ofertas === null ? [] : (ofertas instanceof Array ? ofertas : [ofertas]);
+                        $('#listaOfertas li').remove();
+                        $("#listaOfertasDetalles").remove();
+                        for(i=0; i<list.length; i++){
+                            var tipo;
+                            if(list[i].tipo===0)
+                                tipo=" Gratuita";
+                            else
+                                tipo=" Subasta: " + list[i].tipo;        
+                            $("#listaOfertas").append('<li><a id=pubOferta'+i+ 
+                                    ' href=SeeTask.html?'+list[i].idOferta+'&1 name=link>' + list[i].titulo + ' - ' + 
+                                    list[i].idUsuario.login + '</a>' + '<li>' +
+                                    list[i].detalles + '<li>' + 
+                                    list[i].provincia + '<li> Oferta tipo' +
+                                    tipo + '</li></li></li></li>');
+                        }
+                    };
+                    
+                    function cookie_oferta(){
+                        alert($(this).attr("id"));
+                        var cookie = $.cookie('c_oferta');
+                        alert("coge el attr: " + $(this).attr("title"));
+                        alert("Primera cookie: " +cookie);
+                        document.cookie = 'c_publicacion='+"1"+"; path=/";
+                        document.cookie = 'c_oferta='+$('#pubOferta').attr("rel")+"; path=/";
+                        cookie = $.cookie('c_oferta');
+                        alert("cookie end: "+cookie);
+                    }
+                    
+                    function ProcesarDemandas(demandas){
+                        var list = demandas === null ? [] : (demandas instanceof Array ? demandas : [demandas]);
+                        $('#listaDemandas li').remove();
+                        $("#listaDemandasDetalles").remove();
+                        for(i=0; i<list.length; i++){
+                            var tipo;
+                            if(list[i].tipo===0)
+                                tipo=" Gratuita";
+                            else
+                                tipo=" Subasta: " + list[i].tipo;
+                            $("#listaDemandas").append('<li><a href=SeeTask.html>' + list[i].titulo + ' - ' + 
+                                    list[i].idUsuario.login + '</a>' + '<li>' +
+                                    list[i].detalles + '<li>' + 
+                                    list[i].provincia + '<li> Oferta tipo' +
+                                    tipo + '</li></li></li></li>');
+                        }
+                    };
+                    
+                    function mostrarOfertas(){
+                       $.ajax({                   
+                         type: "GET",
+                         url: "http://localhost:8080/qpq-war/webresources/generic/ofertas",
+                         datatype: "json",
+                         success: function(ofertas){
+                             console.log(ofertas);
+                             ProcesarOfertas(ofertas);
+                         },
+                         error: function (error, xhr, textStatus, errorThrown) { 
+                            console.log("ERROR");
+                            console.log(JSON.stringify(error));
+                            console.log("xhr.status: " + xhr.status);
+                            console.log("xhr.statusText: " + xhr.statusText);
+                            console.log("xhr.readyState: " + xhr.readyState);
+                            console.log("xhr.responseText: " + xhr.responseText);
+                            console.log("xhr.responseXML: " + xhr.responseXML);
+                            console.log("textStatus: " + textStatus);
+                            console.log("errorThrown: " + errorThrown);
+                            console.log("xhr.redirect: " + xhr.redirect);
+                        }
+                        });
+                        };
+                        
+                        function mostrarDemandas(){
+                       $.ajax({                   
+                         type: "GET",
+                         url: "http://localhost:8080/qpq-war/webresources/generic/demandas",
+                         datatype: "json",
+                         success: function(demandas){
+                             ProcesarDemandas(demandas);
+                         },
+                         error: function (error, xhr, textStatus, errorThrown) { 
+                            console.log("ERROR");
+                            console.log(JSON.stringify(error));
+                            console.log("xhr.status: " + xhr.status);
+                            console.log("xhr.statusText: " + xhr.statusText);
+                            console.log("xhr.readyState: " + xhr.readyState);
+                            console.log("xhr.responseText: " + xhr.responseText);
+                            console.log("xhr.responseXML: " + xhr.responseXML);
+                            console.log("textStatus: " + textStatus);
+                            console.log("errorThrown: " + errorThrown);
+                            console.log("xhr.redirect: " + xhr.redirect);
+                        }
+                        });
+                        }
+
+                </script>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+    <!--QUEDA:
+    - Fondo Blanco
+    - Agragar modificaciones de perfil:
+        - Cerrar cuenta
+        - Cambiar contraseña
+    - Agrgar ofertas y demandas
+    - Crear filtros de búsqueda
+    - Footer
+    -->
+<head>
+<meta charset="utf-8">
+<title>Bienvenido</title>
+    <link href="css/thrColLiqHdr.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="qpq.jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="qpq.jquery/jquery.cookie.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/Principal.css">
+    <link rel="stylesheet" type="text/css" href="css/Cabecera.css">
+
+</head>
+
+<body onload="Cookies()">
+    <div id="wrapper">
+        <div id="header">
+            <div class="headerwrapper">
+                <div class="logo">
+                    <div class="logo-inner">
+                        <a href="#">
+                            <img src="images/logotipo.png" alt="QPQ.es" title="QPQ.es" width="232" height="70">
+                        </a>
+                    </div>                        
+                </div>
+                <div class="navwrapper">
+                    <div class="perfil">
+                        <ul>
+                            <li>
+                                <span id="spanNombre">Bienvenido: </span>
+                            </li>
+                            <li>
+                                <a href="perfil.html" id="btnPerfil" class="boton_estilo">Perfil</a>  
+                            </li>
+                            <li>
+                                <a href="index.html" id="btnIndex" class="boton_estilo">Salir</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="Nav">
+                        <ul>
+                            <li><a href="/Ofertas">Ofertas</a></li>
+                            <li class="separador"> | </li>
+                            <li><a href="/Demandas">Demandas</a></li>
+                            <li class="separador"> | </li>
+                            <li><a href="/Funciona">Como Funciona</a></li>
+                            <li class="separador"> | </li>
+                            <li><a href="/Contacto">Contacto</a></li>
+                            <li class="separador"> | </li>
+                            <li><a href="/Invita">¡Invita a tus amigos!</a></li>
+                            <li class="separador"> | </li>
+                            <li><a href="/Index">Salir</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<div class="Contenido">
+  <div class="sidebar1">
+    <ul class="nav">
+      <li>Oferta 1</li>
+      <li>Oferta 2</li>
+      <li>Oferta 3</li>
+      <li>Oferta 4</li>
+      <li>Oferta 5</li>
+      <li>Oferta 6</li>
+      <li>Oferta gratuita 1</li>
+      <li>Oferta gratuita 2</li>
+    </ul>
+    
+    <!-- end .sidebar1 --></div>
+  <div class="content">
+    <ul>    
+      <li>
+          <button id="oferta" class="button" onclick="RedireccionPubOferta()">Publicar Oferta</button>
+      </li>
+      <li>
+          <button id="demanda" class="button" onclick="RedireccionPubDemanda()">Publicar Demanda</button>
+      </li>
+      <li>
+          <button id="publicadas" class="button" onclick="Publicadas()">Ver publicaciones</button>
+      </li>
+      <li>
+          <button id="inscritas" class="button" onclick="Inscritas()">Ver inscripciones</button>
+      </li>
+      <li>
+          <input type="submit" name="mensajes" id="mensajes" value="Comprobar mensajes">
+      </li>
+    </ul>
+      <!-- end .content -->
+  </div>
+  <div class="sidebar2">
+    <ul class="nav">
+      <li>Demanda 1</li>
+      <li>Demanda 2</li>
+      <li>Demanda 3</li>
+      <li>Demanda 4</li>
+      <li>Demanda 5</li>
+      <li>Demanda 6</li>
+      <li>Demanda gratuita 1</li>
+      <li>Demanda gratuita 2</li>
+    </ul>
+  <!-- end .container --></div>
+</div>
+    <script type="text/javascript">
+        function Cookies() {
+                var cookieValue = $.cookie("cookie_username");
+            
+            $('#spanNombre').html('<h1> Bienvenido ' + cookieValue + '</h1>');
+        }
+        function RedireccionPubOferta(){
+            $.removeCookie("cookie_publicacion");
+            $.cookie("cookie_publicacion","oferta", {path: '/'});
+            window.location = "Publicacion.html";
+        }
+        
+        function RedireccionPubDemanda(){
+            $.removeCookie("cookie_publicacion");
+            $.cookie("cookie_publicacion","demanda", {path: '/'});
+            window.location = "Publicacion.html";
+        }
+        
+        function Publicadas(){
+            window.location="listaPublicadas.html";
+        }
+        
+        function Inscritas(){
+            window.location="listaInscripciones.html";
+        }
+            
+    </script>
+    </div>
+</body>
+</html>

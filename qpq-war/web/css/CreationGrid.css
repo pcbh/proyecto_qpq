@@ -1,0 +1,343 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13-ene-2014, 15:25:22
+    Author     : laura
+*/
+
+#Contenido .left {
+    float: left;
+    width: 673px;
+    margin-right: 14px;
+}
+
+#Contenido .left .b2 {
+    float: left;
+    width: 643px;
+    padding: 15px;
+    background: #fff;
+    margin-bottom: 14px;
+}
+
+#Contenido .left .b2 .apart.zone {
+    float: left;
+    width: 595px;
+}
+
+#Contenido .left .b2 .apart.zone {
+    background: url(http://findicons.com/files/icons/1609/ose_png/256/globe.png) no-repeat 0 7px;
+}
+
+#Contenido .left .b2 .apart.zone .formline {
+    width: 260px;
+    float: left;
+    margin-right: 10px;
+}
+
+#Contenido .left .b2 .formline {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#Contenido .left .b2 .apart.zone .formline .input.select {
+    float: left;
+    width: 200px;
+}
+
+#Contenido .left .b2 .apart.zone .formline .input.select select {
+    width: 180px;
+}
+
+#Contenido .left .b2 .apart.zone .formline select {
+    width: 250px;
+}
+
+#Contenido .left .b2 select {
+    border: 1px solid #CCCCCC;
+    color: #999999;
+    font-size: 13px;
+    height: 27px;
+}
+
+#Contenido .left .b2 .apart.zone .formline.second {
+    width: 315px;
+}
+
+#Contenido .left .b2 .apart.zone .formline {
+    width: 260px;
+    float: left;
+    margin-right: 10px;
+}
+
+#Contenido .left .b2 .apart .contenedorDeTareas {
+margin-left: -45px;
+}
+
+#Contenido .left .contenedorDeTareas {
+margin-bottom: 16px;
+}
+
+#Contenido .left .contenedorDeTareas {
+width: 706px;
+height: 80px;
+float: left;
+overflow: hidden;
+}
+
+#Contenido .left .contenedorDeTareas a.prev {
+    float: left;
+    margin-right: 8px;
+    margin-top: -5px;
+}
+
+#Contenido .left .contenedorDeTareas a.next {
+    float: left;
+    margin-left: 4px;
+    margin-top: -5px;
+}
+
+#Contenido .left .contenedorDeTareas .slidewrapper {
+    width: 585px;
+    float: left;
+    overflow: hidden;
+    margin-left: 4px;
+    position: relative;
+}
+
+#Contenido .left .contenedorDeTareas .slidewrapper ul {
+    list-style: none;
+    float: left;
+    margin-top: 8px;
+}
+
+#Contenido .left .contenedorDeTareas .slidewrapper ul li {
+    float: left;
+    margin-right: 5px;
+    padding: 0px;
+    width: 112px;
+}
+
+#Contenido .left .contenedorDeTareas .slidewrapper ul li a img {
+    max-width: 112px;
+    max-height: 63px;
+}
+
+#Contenido .left .contenedorDeTareas .slidewrapper ul li .preview .info_adicional.selected {
+    background: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRA7KuIYPVvSQLeow-z5e6fID3ff9l6EurUTC_vdd2LBZ7sT4ux) no-repeat right top;
+}
+#Contenido .left .contenedorDeTareas .slidewrapper ul li .info_adicional {
+    color: #2f2f2f;
+    font-size: 13px;
+    float: left;
+    height: 46px;
+    width: 92px;
+    margin-right: -168px;
+    position: relative;
+    padding: 17px 10px 0 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#Contenido .left .b2 .subCat {
+    float: left;
+    width: 100%;
+}
+
+#Contenido .left .b2 .subCat .oben {
+    float: left;
+    width: 580px;
+    margin-bottom: 10px;
+}
+
+#Contenido .left .b2 .subCat .col {
+    float: left;
+    width: 282px;
+    margin-right: 5px;
+}
+
+#Contenido .left .b2 .subCat .col .formline {
+    float: left;
+    margin-bottom: 3px;
+    margin-top: 5px;
+}
+
+#Contenido .left .b2 .apart {
+    padding: 10px 0px 10px 45px;
+    border-bottom: 1px dashed #ccc;
+    float: left;
+    width: 595px;
+    min-height: 40px;
+}
+
+#Contenido .left .b2 .desc .formline {
+    margin-bottom: 5px;
+}
+
+#Contenido .left .b2 .desc .formline label .char-left {
+    color: #999;
+    font-size: 11px;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+#Contenido .contenedorDeTareas button {
+    float: left;
+}
+
+#Contenido .left .b2 .map {
+    float: left;
+    width: 594px;
+    margin-top: 10px;
+}
+
+#Contenido .left .b2 .map input {
+    width: 422px;
+    border: 1px solid rgb(204, 204, 204);
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    color: rgb(153, 153, 153);
+    font-size: 13px;
+    height: 27px;
+}
+
+#Contenido .left .b2 .map .addendum {
+    margin-top: 10px;
+    float: left;
+}
+
+#Contenido .left .b2 .apart._when {
+    background: url(../img/clock.png) no-repeat 0 7px;
+}
+
+#Contenido .left .b2 .change {
+    display: none;
+    float: left;
+    width: 100%;
+}
+
+#Contenido .left .b2 .formline .date {
+    float: left;
+    margin-left: 10px;
+    margin-top: -4px;
+}
+
+#Contenido .left .b2 .change .date input {
+    margin: 0px 5px 0px 10px;
+    width: 250px;
+    float: left;
+    font-size: 13px;
+    text-align: center;
+}
+#Contenido .left .b2 .formline .date input {
+    border: 1px solid #CCCCCC;
+    height: 24px;
+}
+
+#Contenido .left .b2 .apart.prices {
+    border-bottom: none;
+}
+
+#Contenido .left .b2 .prices .sideswrapper {
+    float: left;
+    margin-bottom: 10px;
+}
+
+#Contenido .left .b2 .prices .link {
+    width: 596px;
+    float: left;
+    margin-right: 14px;
+}
+
+#Contenido .left .b2 .prices .link .formline {
+    margin-left: 5px;
+}
+
+#Contenido .left .b2 .prices .formline {
+    margin: 10px 0;
+    width: 515px;
+}
+
+#Contenido .left .b2 .prices .formline label {
+    float: left;
+    margin-right: 5px;
+    width: 95px;
+    margin-top: 10px;
+}
+
+#Contenido .left .b2 .prices .formline input {
+    float: left;
+    width: 120px;
+    border: 1px solid #CCCCCC;
+    font-size: 13px;
+    height: 24px;
+    text-align: right;
+}
+
+#Contenido .left .b2 .prices .formline .help {
+    float: none;
+    position: relative;
+    top: 4px;
+}
+
+#Contenido .left .b2 .formline .help {
+    margin-left: 15px;
+}
+
+#Contenido .left .b2 .prices .formline .help .hidden-info {
+    margin-left: 22px;
+    margin-top: -18px;
+    text-align: left;
+}
+
+#Contenido .left .b2 .formline .hidden-info {
+    margin: -44px 0 0 22px;
+}
+
+#Contenido .left .b2 .formline .hidden-info {
+    position: absolute;
+    width: 200px;
+    z-index: 9;
+}
+
+#Contenido .left .b2 .formline .hidden-info .top {
+    background: url(http://styles.etece.es/img/back-help-top.png) no-repeat;
+    float: left;
+    width: 200px;
+    height: 51px;
+}
+
+#Contenido .left .b2 .formline .hidden-info .mitte {
+    background: url(http://styles.etece.es/img/back-help-med.png) repeat;
+    float: left;
+    width: 200px;
+}
+
+#Contenido .left .b2 .formline .hidden-info .mitte span.title {
+    margin-top: -45px;
+    font-weight: bold;
+    width: 123px;
+}
+#Contenido .left .b2 .formline .hidden-info .mitte span {
+    padding: 0 25px 0 27px;
+    float: left;
+    color: #fff;
+}
+
+#Contenido .left .b2 .formline .hidden-info .bottom {
+    background: url(http://styles.etece.es/img/back-help-bottom.png) no-repeat;
+    float: left;
+    width: 200px;
+    height: 13px;
+}
+
+#Contenido .left .b2 .apart.adress {
+    background: url(http://styles.etece.es/img/map.png) no-repeat 0 7px;
+}
+

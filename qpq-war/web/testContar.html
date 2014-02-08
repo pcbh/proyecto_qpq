@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script type="text/javascript" src="qpq.jquery/jquery-1.10.2.min.js"></script>
+    </head>
+    <body>
+        <button id="contar" onclick="contar()">Contar</button>
+        <script type="text/javascript">
+            function contar(){
+                $.ajax({
+                       type: "GET",
+                       url: "http://localhost:8080/qpq-war/webresources/generic/id",
+                       data: "",
+                       datatype: "json",
+                       success: function(resp) {
+                           alert("funciona" + resp);
+                       },
+                               error: function(e) {
+                           alert("error");
+                               }
+                   });
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Publicar Oferta/Demanda</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/Principal.css">
+        <link rel="stylesheet" type="text/css" href="css/Cabecera.css">
+        <link rel="stylesheet" type="text/css" href="css/Footer.css">
+        <link rel="stylesheet" type="text/css" href="css/CreationGrid.css">
+        <link rel="stylesheet" type="text/css" href="css/jqueryUI.css">
+        <script type="text/javascript" src="qpq.jquery/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="http://www.gmarwaha.com/jquery/jcarousellite/js/jcarousellite_1.0.1.min.js"></script>
+        <script type="text/javascript" src="qpq.jquery/jquery.cookie.js"></script>
+    </head>
+    <body onload="Cookies(); titulo_publicacion()">
+        <div id="wrapper">
+            <div id="header">
+            <div class="headerwrapper">
+                <div class="logo">
+                    <div class="logo-inner">
+                        <a href="#">
+                            <img src="images/logotipo.png" alt="QPQ.es" title="QPQ.es" width="232" height="70">
+                        </a>
+                    </div>                        
+                </div>
+                <div class="navwrapper">
+                    <div class="perfil">
+                        <ul>
+                            <li>
+                                <span id="spanNombre">Bienvenido: </span>
+                            </li>
+                            <li>
+                                <a href="perfil.html" id="btnPerfil" class="boton_estilo">Perfil</a>  
+                            </li>
+                            <li>
+                                <a href="index.html" id="btnIndex" class="boton_estilo">Salir</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="Nav">
+                        <ul>
+                            <li><a href="/Ofertas">Ofertas</a></li>
+                            <li class="separador"> | </li>
+                            <li><a href="/Demandas">Demandas</a></li>
+                            <li class="separador"> | </li>
+                            <li><a href="/Funciona">Como Funciona</a></li>
+                            <li class="separador"> | </li>
+                            <li><a href="/Contacto">Contacto</a></li>
+                            <li class="separador"> | </li>
+                            <li><a href="/Invita">¡Invita a tus amigos!</a></li>
+                            <li class="separador"> | </li>
+                            <li><a href="/Index">Salir</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lightboxback"></div>
+        <div class="newtaskback"></div>
+        <div id="Contenido">
+            
+            <div class="left">
+                <div class="b2">
+                    <form id="PublicacionAnyadir" action="#" method="post">    
+                        <div class="apart desc">
+                                <div class="formline">
+                                    <label>
+                                        <span id="tituloPub"></span>
+                                    </label>
+                                </div>
+                                <div class="formline">
+                                    <label>
+                                    <span id="detallesPub"></span>
+                                    </label>       
+                                </div>  
+                                <div class="formline">
+                                    <label>
+                                    <span id="realTask"></span>
+                                    </label>       
+                                </div>  
+                                <div class="formline">
+                                    <label>
+                                    <span id="tipoTask"></span>
+                                </label>       
+                                </div> 
+                            </div>              
+                        <input type="submit" value="Suscribir" class="boton_estilo" />
+                    </form>
+                    <a href="" id="btnPublicar" class="boton_estilo">Publicar</a>
+                    <div id="usuario"></div>
+                </div>
+            </div>
+        </div>
+            <script type="text/javascript">
+                function Cookies() {
+                    var cookieValue = $.cookie("cookie_username");
+                    //titulo_publicacion();
+                    if(cookieValue.toString()===("undefined"||null)){
+                        $('#spanNombre').html('<h1> Bienvenido </h1>');
+                    }
+                    else
+                        $('#spanNombre').html('<h1> Bienvenido ' + cookieValue + '</h1>');  
+                    //alert($.cookie("cookie_publicacion"));
+            }     
+                
+            function titulo_publicacion(){
+                var src=String(window.location.href).split('?')[1];
+                var vrs=src.split('&');
+                getOferta(vrs);
+                /*
+                if($.cookie("c_publicacion").toString()==="1"){
+                    getOferta();
+                    
+                }*/
+                
+            };
+            
+            function getOferta(vrs){                
+                $.ajax({                   
+                  type: "GET",
+                  url: "http://localhost:8080/qpq-war/webresources/generic/oferta/" + vrs[0],
+                  datatype: "json",
+                  success: function(oferta){
+                      console.log(oferta);
+                      $("#tituloPub").html('<h1>'+oferta.titulo+'</h1>');
+                      $("#detallesPub").html('<h2>'+oferta.detalles+'</h2>');
+                      $("#realTask").html('<h2>La tarea se llevará a cabo... '+oferta.realizacion+'</h2>'); 
+                      var tipo;
+                      if(oferta.tipo!==0)
+                          tipo="se trata de una subasta con precio de entrada... " + oferta.tipo;
+                      else
+                          tipo="... ¡Es gratuita! ¡Suscríbete!";
+                      $("#tipoTask").html('<h2>Esta oferta '+tipo.toString()+'</h2>');
+                  },
+                  error: function (error, xhr, textStatus, errorThrown) { 
+                     console.log("ERROR");
+                     console.log(JSON.stringify(error));
+                     console.log("xhr.status: " + xhr.status);
+                     console.log("xhr.statusText: " + xhr.statusText);
+                     console.log("xhr.readyState: " + xhr.readyState);
+                     console.log("xhr.responseText: " + xhr.responseText);
+                     console.log("xhr.responseXML: " + xhr.responseXML);
+                     console.log("textStatus: " + textStatus);
+                     console.log("errorThrown: " + errorThrown);
+                     console.log("xhr.redirect: " + xhr.redirect);
+                 }
+                 });
+                        
+            }
+            
+            </script>
+        </div>
+    </body>
+</html>
+

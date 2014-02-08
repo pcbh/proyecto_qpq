@@ -1,0 +1,210 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12-ene-2014, 12:22:27
+    Author     : laura
+*/
+
+@charset "utf-8";
+#header {
+    width: 100%;
+    float: left;
+    height: 93px;
+    background-color: #757398;
+    
+    
+    
+}
+
+.headwrapper {
+    width: 997px;
+    height: 90px;
+    margin: auto;
+    }
+    
+.navwrapper {
+    float: right;
+    width: 700px;
+    margin-top: -8px;
+}
+    
+.bold {
+    font-family: arial;
+    font-weight: bold;
+}
+
+.perfil {
+    float: right;
+    width: auto;
+    margin: 12px 20px 18px 0;
+}
+
+.perfil ul li a {
+    color: #fff;
+}
+
+.perfil ul li {
+    display: inline;
+    color: #FFF;
+    padding: 3px 7px;
+    font-size: 13px;
+    float: left;
+}
+
+.Nav {
+    float: right;
+    margin-right: 20px;
+    min-width: 629px;
+}
+
+.Nav ul li {
+    display: inline;
+    color: #FFF;
+    font-size: 14px;
+    float: left;
+}
+
+li.separador {
+    padding: 2px;
+}
+
+.Nav ul li a {
+   color: #fff; 
+}
+
+.logo {
+    float: left;
+    margin-bottom: 6px;
+}
+
+.logo-inner {
+    margin: 20px 0 0 20px;
+    float: left;
+    width: 232px;
+    text-indent: -10000px;
+}
+
+.logo-inner a {
+    display: block;
+    float: left;
+    height: 42px;
+    width: 232px;
+    position: relative;
+}
+
+li {
+    list-style: none;
+}
+
+.lightboxback {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 8;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.newtaskback {
+    top: 93px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    left: 0;
+    cursor: pointer;
+    display: none;
+}
+
+#Contenido {
+    margin: 90px auto 0;
+    width: 957px;
+    padding: 50px 20px 20px 20px;
+}
+
+.Publicacion_tarea {
+    float: left;
+    margin-top: -35px;
+    position: absolute;
+    width: 955px;
+    font-size: 11px;
+    padding-top: 4px;
+}
+
+span {
+    padding-right: 3px;
+    float: left;
+    white-space: nowrap;
+}
+
+a.home {
+    //background: url(/images/home.png) no-repeat;
+    width: 25px;
+    height: 20px;
+    float: left;
+    margin-right: 5px;
+    margin-top: -5px;
+}
+
+.left {
+    float: left;
+    width: 673px;
+    margin-right: 14px;
+}
+
+.left .b2 {
+    float: left;
+    width: 643px;
+    padding: 15px;
+    background: #fff;
+    margin-bottom: 14px;
+}
+
+form {
+    font-family: arial;
+    font-weight: normal;
+}
+
+#Contenido .left .b2 .apart-zone {
+    float: left;
+    width: 595px;
+    //background: url(../img/world.png) no-repeat 0 7px;
+    
+}
+
+#Contenido .left .b2 .apart {
+    padding: 10px 0px 10px 45px;
+    border-bottom: 1px dashed #ccc;
+    float: left;
+    width: 595px;
+    min-height: 40px;
+}
+
+#Contenido .left .b2 .apart.zone .formline .input.select {
+    float: left;
+    width: 200px;
+}
+
+#Contenido .left .b2 .apart.zone .formline.second {
+    width: 315px;
+}
+
+#Contenido .left .b2 .apart .contenedorDeTareas {
+    margin-left: -45px;
+}
+
+#Contenido .left .contenedorDeTareas {
+    margin-bottom: 16px;
+}
+
+#Contenido .left .contenedorDeTareas {
+    width: 706px;
+    height: 80px;
+    float: left;
+    overflow: hidden;
+}
+
